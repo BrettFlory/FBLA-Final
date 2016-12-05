@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Flory- Home</title>
+<link href="style5.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+
+(function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+				
+			}, 4000);
+		},
+		
+}
+		
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#main-slider" );
+		
+	});
+	
+	
+})();
+
+</script>
+
+<link rel="apple-touch-icon" sizes="57x57" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="969b65a97d7220f9935e2f60adb21b28.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="969b65a97d7220f9935e2f60adb21b28.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="969b65a97d7220f9935e2f60adb21b28.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="969b65a97d7220f9935e2f60adb21b28.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="969b65a97d7220f9935e2f60adb21b28.ico/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+
+</head>
+
+<body>
+
+
+
+<nav role='navigation'>
+  <ul>
+    <li><a class="current" href="index.html"><div id="title"> SIMP-LY FUN 🎉 <!--🎉🎉🎉🎉🎉--> </div>  </a></li>
+  <div id="menu">
+    <li><a class="current" href="attractions.html"> <div style="border-left:medium rgba(0,0,0,.1) solid;" /> Attractions</a></li>
+    <li><a class="current" href="events.html">Events</a></li>
+    <li><a class="current" href="about.html">About</a></li>
+    <li><a class="current" href="contact.html">Contact</a></li>
+    <li><a class="current" href="testimonials.html">Testimonials</a></li>
+  </div>
+  </ul>
+</nav>  
+
+
+<div class="page_header"> 
+	SIMP-LY ENTERTAINING 
+</div>
+
+
+<div class="content">
+
+    <div class="wrap"> 
+    
+    <div class="slider" id="main-slider"><!-- outermost container element -->
+	<div class="slider-wrapper"><!-- innermost wrapper element -->
+    	<img src="images5/firkin-kegler-gameroom.jpg" width="960" height="383" alt="First" class="slide" />
+		<img src="images5/slide02.gif" width="960" height="383" alt="Second" class="slide" />
+        <img src="images5/MG_0731.gif" width="960" height="383" alt="Third" class="slide" />
+        <img src="images5/snackbar.gif" width="960" height="383" alt="Fourth" class="slide" />
+	</div>
+</div>	
+    
+    
+    	<div class="column_index">
+        	
+            <p> Come to our new facility and have a Simp-ly Fun time! We have game rooms, go-karts, party rooms, a snack bar, and much more! </p>
+            <p> Read more about our company <a href="about.html">here!</a></p>
+        
+        <br />
+        
+        <a href="attractions.html#game_room"><img src="images5/slide02.gif" width="33%" height="auto" /></a>
+        
+        <a href="attractions.html#go-karts"><img src="images5/MG_0731.gif" width="33%" height="auto" /></a>
+        
+        <a href="attractions.html#snack_bar"><img src="images5/snack-bar-1030x235.gif" width="33%" height="auto" /></a>
+        
+        </div><!--close column-->
+    
+    </div><!--close wrap-->
+
+</div><!--content-->
+
+
+
+
+
+
+
+
+
+<div id="footer">
+
+Content created by: Brett Flory
+<hr style="width:20%;text-align:center;" color="#999999" />
+Copyright © 2016 Simp-ly Fun LLC. All rights reserved.
+
+</div><!--close footer-->
+
+
+
+</body>
+</html>
